@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <link rel="manifest" href="images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>aqr-soft : software_arquitecture_and_security_experts</title>
+    <style>
+      body {
+        padding: 20px;
+        background: #111;
+        color: #eee;
+        font-family: 'Share Tech Mono', monospace;
+      }
+      a { color: #ddd; text-decoration: none; }
+      a:hover { color: #fff; }
+      #title{
+        font-size: 420%;
+        font-weight: 800;
+      }
+      #subtitle{
+        font-size:180%;
+        font-weight: 700;
+      }
+      #info{
+        margin-top: 20px;
+        font-size:140%;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="title">
+      arq-soft
+    </div>
+    <div id="subtitle">
+      software_arquitecture_and_security_experts
+    </div>
+    <div id="info">
+        <code>
+&nbsp;&nbsp;{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Contact: <a href="mailto:request@arqsoft.xyz">request@arqsoft.xyz</a>, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Services: [ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software arquitecture, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Code reliability reviews, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software development life-cycle consulting <br>
+&nbsp;&nbsp;&nbsp;&nbsp;], <br>
+&nbsp;&nbsp;&nbsp;&nbsp;BTC address: 3MwqKMpPVqNK3yaNEFhSzPzfWbafdrDJkC <br>
+&nbsp;&nbsp;}
+      </code>
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+  <script>
+  
+function Application() {
+  this.colorPointer = 0
+  this.load = function () {
+    this.changeColors()
+  }
+  this.moveColorPointer = function () {
+    if ( this.colorPointer == 3 ) {
+      this.colorPointer = 0
+      return
+    }
+    this.colorPointer += 1
+  }
+  this.changeColors = function () {
+    var color = ["#E95C27", "#F2C078", "#FAEDCA", "#C1DBB3"][this.colorPointer]
+    $("#title").css("color", color);
+    this.moveColorPointer()
+    
+    var self = this
+    window.setTimeout(function() {
+      self.changeColors()
+    }, 2000)
+  }
+}
+
+$(document).ready(function() { (new Application).load() })
+
+
+  </script>
+  </body>
+</html>
