@@ -64,6 +64,9 @@
 &nbsp;&nbsp;}
       </code>
     </div>
+    
+<div id="terminal"></div>
+    
     <script
   src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
@@ -95,7 +98,45 @@ function Application() {
 }
 
 $(document).ready(function() { (new Application).load() })
+jQuery(function($, undefined) {
+    $('#terminal').terminal(function(command) {
+        if(command == undefined){
+          this.error('I couldn\'t understand that')
+        }
+        if (command !== '') {
+            try {
+                if(command == "help") {
+                  this.echo('Help is unimplemented :(');
+                }
+                if(command == 'services') {
+                  this.echo('We do software architecture, security consulting, code (vulnerability) reviews, software development life-cycle consulting, and insider/external vulnerabilities and flaws prevention.\nType services: x to know more (where x can be architecture, security or consulting)');
+                }
+                if(command == 'services: architecture'){
+                  this.echo(' :) ')
+                }
+                if(command == 'services: security'){
+                  this.echo(' :) ')
+                }
+                if(command == 'services: consulting'){
+                  this.echo(' :) ')
+                }
+            } catch(e) {
+                this.error('I couldn\'t understand that');
+            }
+        } else {
+           this.echo('');
+        }
+    }, {
+        greetings: '\r\n     _    ____   ___             __ _                        \r\n    \/ \\  |  _ \\ \/ _ \\ ___  ___  \/ _| |_      __  ___   _ ____\r\n   \/ _ \\ | |_) | | | \/ __|\/ _ \\| |_| __|     \\ \\\/ \/ | | |_  \/\r\n  \/ ___ \\|  _ <| |_| \\__ \\ (_) |  _| |_   _   >  <| |_| |\/ \/ \r\n \/_\/   \\_\\_| \\_\\\\__\\_\\___\/\\___\/|_|  \\__| (_) \/_\/\\_\\\\__, \/___|\r\n                                                   |___\/     \r\nArqsoft Web Terminal\nType services, help or contact (or hack for yourself).\n',
+        name: 'arqsoft_terminal',
+        height: 600,
+        prompt: 'arq> '
+    });
+});
 
+$(document).ready(function(){
+	$("#terminal").terminal('service.php', {login: false});
+})
 
   </script>
   </body>
